@@ -18,6 +18,7 @@ module Web
       #
       load_paths << [
         'controllers',
+        'helpers'
       ]
 
       # Handle exceptions with HTTP statuses (true) or don't catch them (false).
@@ -89,6 +90,9 @@ module Web
       #
       default_response_format :json
 
+      # 返回 json
+      # Web::Controller.format custom: 'application/json'
+
       # HTTP Body parsers
       # Parse non GET responses body for a specific mime type
       # Argument: Symbol, which represent the format of the mime type (only `:json` is supported)
@@ -107,7 +111,7 @@ module Web
 
       # The layout to be used by all views
       #
-      layout :application # It will load Web::Views::ApplicationLayout
+      # layout :application # It will load Web::Views::ApplicationLayout
 
       # The relative path to templates
       #
