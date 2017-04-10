@@ -26,12 +26,13 @@ module Web::Controllers::Works
           end
 
           {
-              id: 1,
+              id: hash.id,
               title: hash.title,
               title_ja: hash.title_ja,
               official_site_url: hash.official_site_url,
               episode: hash.episode,
               weekly: hash.weekly,
+              type: hash.type,
               copyright: hash.copyright,
               released_at: hash.released_at,
               created_at: hash.created_at,
