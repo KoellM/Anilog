@@ -1,9 +1,8 @@
 class APIReturn
-  def self.error(code, message)
+  def self.error(message)
     {
         status: 'failed',
         error: {
-            code: code,
             message: message
         }
     }.to_json

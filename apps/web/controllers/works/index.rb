@@ -8,7 +8,7 @@ module Web::Controllers::Works
         work = WorkRepository.new.all
         status 200, APIReturn.success(work.map(&:to_h))
       rescue => e
-        status 500, APIReturn.error('500', e)
+        status 500, APIReturn.error(e)
       end
     end
   end

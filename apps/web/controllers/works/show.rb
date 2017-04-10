@@ -8,7 +8,7 @@ module Web::Controllers::Works
         work = workrepository.find_with_episodes(params[:id])
         status 200, APIReturn.success(attributes_work(work))
       else
-        status 404, APIReturn.error('404', '番剧 ID 不存在.')
+        status 404, APIReturn.error('番剧 ID 不存在.')
       end
     end
 
