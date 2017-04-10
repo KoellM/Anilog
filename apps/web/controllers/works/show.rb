@@ -14,17 +14,6 @@ module Web::Controllers::Works
 
     private
         def attributes_work(hash)
-          episodes = []
-          hash.episodes.each do |e|
-            episodes.push({
-                              number: e.number,
-                              title: e.title,
-                              title_ja: e.title_ja,
-                              created_at: e.created_at,
-                              updated_at: e.updated_at,
-                          })
-          end
-
           {
               id: hash.id,
               title: hash.title,
@@ -37,7 +26,7 @@ module Web::Controllers::Works
               released_at: hash.released_at,
               created_at: hash.created_at,
               updated_at: hash.updated_at,
-              episodes: episodes
+              episodes: hash.episodes.map(&:to_h)
           }
         end
     end
