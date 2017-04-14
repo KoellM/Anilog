@@ -7,6 +7,9 @@ gem 'hanami-model', '~> 1.0'
 
 gem 'mysql2'
 
+# 使用 Sidekiq
+gem 'sidekiq'
+
 group :development do
   # Code reloading
   # See: http://hanamirb.org/guides/projects/code-reloading
@@ -23,5 +26,6 @@ group :test do
 end
 
 group :production do
+  # 使用 Puma
   gem 'puma'
 end
