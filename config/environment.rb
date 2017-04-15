@@ -5,8 +5,10 @@ require_relative '../lib/anilog'
 require_relative '../apps/web/application'
 # 加载Sidekiq
 require_relative './sidekiq'
+require 'sidekiq/web'
 
 Hanami.configure do
+  mount Sidekiq::Web, at: '/sidekiq'
   mount Web::Application, at: '/'
   model do
     ##
